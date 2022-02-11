@@ -18,19 +18,26 @@ import {
 } from "react-vis";
 import { ApiContext } from "../../provider/ApiProvider";
 
-const PricesChart = ({selectedCoin}) => {
+const PricesChart = ({ selectedCoin }) => {
   const { client } = useContext(ApiContext);
   const [coinMetrics, setCoinMetrics] = useState();
+  const [coinHourlyData, setCoinHourlyData] = useState();
   useEffect(() => {
-    (async() => {
+    (async () => {
       if (selectedCoin) {
         const response = await client.getTokenMetrics(selectedCoin);
         setCoinMetrics(response);
+        const hourlyDataResponse = await client.getTokenHourlyData(selectedCoin);
+        const parsedResponse = hourlyDataResponse.open.map((value, index) => ({
+          x: index,
+          y: Number((value.value || 0).toFixed(2))
+        })).filter(value => value.y !== 0);
+        setCoinHourlyData({ data: parsedResponse, title: 'Open' });
       }
     })()
   }, [selectedCoin]);
 
-  if (!coinMetrics) return null;
+  if (!coinMetrics || !coinHourlyData) return null;
   return (
     <Card className="h-100">
       <CardHeader className="border-bottom">
@@ -39,16 +46,14 @@ const PricesChart = ({selectedCoin}) => {
       <CardBody className="pv-0">
         <Row>
           <Col lg="9">
-            {/* <FlexibleXYPlot height={300}>
-              {this.state.series.map((chartData) => (
-                <LineSeries
-                  data={chartData.data}
-                  opacity={chartData.disabled ? 0.2 : 1}
-                />
-              ))}
+            <FlexibleXYPlot height={300}>
+              <LineSeries
+                data={coinHourlyData.data}
+                opacity={coinHourlyData.disabled ? 0.2 : 1}
+              />
               <XAxis />
               <YAxis />
-            </FlexibleXYPlot> */}
+            </FlexibleXYPlot>
           </Col>
           {/* <Col lg="3">
             <DiscreteColorLegend

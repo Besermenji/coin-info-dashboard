@@ -14,4 +14,9 @@ export class ApiClient {
     const response = await axios.get(`${this._serverUrl}/prices/${token}/metrics`)
     return response.data;
   }
+
+  async getTokenHourlyData(token) {
+    const response = await axios.get(`${this._serverUrl}/prices/${token}/hourly_data`)
+    return response.data;
+  }
 }
