@@ -26,7 +26,7 @@ const BlogOverview = () => {
       <Row>
         {/* Prices */}
         {selectedCoin ? <Col lg="9" className="mb-4">
-          <PricesChart />
+          <PricesChart selectedCoin={selectedCoin} />
         </Col>: <></>}
 
         {/* Users by Device */}

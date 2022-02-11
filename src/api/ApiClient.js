@@ -9,4 +9,9 @@ export class ApiClient {
     const response = await axios.get(`${this._serverUrl}/prices/coins`)
     return response.data.coins;
   }
+
+  async getTokenMetrics(token) {
+    const response = await axios.get(`${this._serverUrl}/prices/${token}/metrics`)
+    return response.data;
+  }
 }
