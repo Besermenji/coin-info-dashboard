@@ -13,7 +13,7 @@ class SidebarMainNavbar extends React.Component {
 
   handleToggleSidebar() {
     Dispatcher.dispatch({
-      actionType: Constants.TOGGLE_SIDEBAR
+      actionType: Constants.TOGGLE_SIDEBAR,
     });
   }
 
@@ -36,11 +36,11 @@ class SidebarMainNavbar extends React.Component {
                 className="d-inline-block align-top mr-1"
                 style={{ maxWidth: "25px" }}
                 src={require("../../../images/shards-dashboards-logo.svg")}
-                alt="Shards Dashboard"
+                alt="Coin Info Dashboard"
               />
               {!hideLogoText && (
                 <span className="d-none d-md-inline ml-1">
-                  Shards Dashboard
+                  Coin Info Dashboard
                 </span>
               )}
             </div>
@@ -62,11 +62,11 @@ SidebarMainNavbar.propTypes = {
   /**
    * Whether to hide the logo text, or not.
    */
-  hideLogoText: PropTypes.bool
+  hideLogoText: PropTypes.bool,
 };
 
 SidebarMainNavbar.defaultProps = {
-  hideLogoText: false
+  hideLogoText: false,
 };
 
 export default SidebarMainNavbar;

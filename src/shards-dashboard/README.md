@@ -4,7 +4,7 @@
 </a>
 </p>
 
-<h1 align="center" style="border-bottom: none !important; margin-bottom: 5px !important;"><a href="https://designrevision.com/downloads/shards-dashboard-lite/">Shards Dashboard UI Kit</a></h1>
+<h1 align="center" style="border-bottom: none !important; margin-bottom: 5px !important;"><a href="https://designrevision.com/downloads/shards-dashboard-lite/">Coin Info Dashboard UI Kit</a></h1>
 <p align="center">
   <a href="#">
     <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" />

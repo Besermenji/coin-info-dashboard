@@ -1,5 +1,5 @@
 /*
- * Shards Dashboard Lite UI Kit v1.1.0
+ * Coin Info Dashboard Lite UI Kit v1.1.0
  * Project URL: https://designrevision.com/downloads/shards-dashboard-lite
  * Based on: Shards UI Kit v2.1.0 (https://designrevision.com/downloads/shards)
  * Based on: Bootstrap v4.1.3 (https://getbootstrap.com)
@@ -3731,7 +3731,7 @@ a.text-black:hover, a.text-black:focus {
 .with-shadows {
   box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1); }
 
-/* Shards Dashboards Lite Styles */
+/* Coin Info Dashboards Lite Styles */
 html {
   font-size: 16px;
   font-weight: 500; }
