@@ -1,6 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Row, Col, Card, CardBody } from "shards-react";
+import {
+  Row,
+  Col,
+  Card,
+  CardBody,
+  CardTitle,
+  CardHeader,
+  CardFooter,
+} from "shards-react";
 import {
   LineSeries,
   FlexibleXYPlot,
@@ -75,9 +83,12 @@ class UsersOverview extends React.Component {
   render() {
     return (
       <Card className="h-100">
+        <CardHeader className="border-bottom">
+          <h6 className="m-0">Prices Chart</h6>
+        </CardHeader>
         <CardBody className="pv-0">
           <Row>
-            <Col lg="10">
+            <Col lg="9">
               <FlexibleXYPlot height={300}>
                 {this.state.series.map((chartData) => (
                   <LineSeries
@@ -89,7 +100,7 @@ class UsersOverview extends React.Component {
                 <YAxis />
               </FlexibleXYPlot>
             </Col>
-            <Col lg="2">
+            <Col lg="3">
               <DiscreteColorLegend
                 items={this.state.series}
                 orientation="vertical"
@@ -98,6 +109,15 @@ class UsersOverview extends React.Component {
             </Col>
           </Row>
         </CardBody>
+        <CardFooter className="border-top">
+          <Row>
+            <Col className="text-center view-report">
+              <h6>Min: value</h6>
+              <h6>Min: value</h6>
+              <h6>Min: value</h6>
+            </Col>
+          </Row>
+        </CardFooter>
       </Card>
     );
   }
